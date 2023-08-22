@@ -1,0 +1,17 @@
+Package: dobEstimator
+Title: Date of Birth Estimator
+Version: 0.0.0.9000
+Authors@R: 
+    person("James", "Baird", , "j.baird94@gmail.com", role = c("aut", "cre"))
+Description: A deterministic approach to estimate an individual's date of
+    birth by intersecting possible ranges derived from a collection of known
+    ages and corresponding dates. This package provides a robust method to
+    narrow down possible dates of birth, especially useful in scenarios where
+    only fragmented age data is available over time.
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports:
+    lubridate,
+    purrr
