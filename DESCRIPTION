@@ -17,4 +17,6 @@ Imports:
     purrr
 URL: http://jbaird.co/dobEstimator/
 Suggests: 
-    covr
+    covr,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

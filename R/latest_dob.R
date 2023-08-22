@@ -8,7 +8,7 @@
 #' @param date Date vector of observation dates
 #' @return Date vector of latest possible dates of birth
 #' @export
-#' @import lubridate
 latest_dob <- function(age, date) {
-  date - years(age)
+  if (any(age < 0)) stop("Age must be non-negative")
+  date - lubridate::years(age)
 }

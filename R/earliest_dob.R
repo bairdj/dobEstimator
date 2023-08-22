@@ -9,7 +9,6 @@
 #' @param date Date vector of observation dates
 #' @return Date vector of earliest possible dates of birth
 #' @export
-#' @import lubridate
 earliest_dob <- function(age, date) {
-  date + days(1) - years(age + 1)
+  date + lubridate::days(1) - lubridate::years(age + 1)
 }

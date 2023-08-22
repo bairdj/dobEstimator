@@ -3,4 +3,3 @@
 export(earliest_dob)
 export(estimate_dob)
 export(latest_dob)
-import(lubridate)
