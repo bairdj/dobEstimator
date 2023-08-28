@@ -14,3 +14,10 @@ test_that("latest_dob works with vector inputs", {
 test_that("latest_dob has error if negative age", {
   expect_error(latest_dob(-1, as.Date("2016-10-02")))
 })
+
+test_that("latest_dob throws errors for invalid input", {
+  expect_error(latest_dob("asdfa", as.Date("2016-10-02")))
+  expect_snapshot(latest_dob("asdfa", as.Date("2016-10-02")), error = TRUE)
+  expect_error(latest_dob(18, "asdfa"))
+  expect_snapshot(latest_dob(18, "asdfa"), error = TRUE)
+})

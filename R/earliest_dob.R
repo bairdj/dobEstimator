@@ -10,5 +10,8 @@
 #' @return Date vector of earliest possible dates of birth
 #' @export
 earliest_dob <- function(age, date) {
+  check_age_arg(age)
+  check_date_arg(date)
+  if (any(age < 0)) stop("Age must be non-negative")
   date + lubridate::days(1) - lubridate::years(age + 1)
 }

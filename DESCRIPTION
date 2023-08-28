@@ -14,7 +14,8 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Imports:
     lubridate,
-    purrr
+    purrr,
+    cli
 URL: http://jbaird.co/dobEstimator/
 Suggests: 
     covr,

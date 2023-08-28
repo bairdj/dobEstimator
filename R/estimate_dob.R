@@ -5,6 +5,8 @@
 #' @return Interval from earliest to latest possible date of birth
 #' @export
 estimate_dob <- function(age, date) {
+  check_age_arg(age)
+  check_date_arg(date)
   intervals <- to_interval(age, date)
 
   purrr::reduce(intervals, lubridate::intersect)
