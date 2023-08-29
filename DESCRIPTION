@@ -16,7 +16,7 @@ Imports:
     lubridate,
     purrr,
     cli
-URL: http://jbaird.co/dobEstimator/
+URL: http://jbaird.co/dobEstimator/, https://github.com/bairdj/dobEstimator
 Suggests: 
     covr,
     testthat (>= 3.0.0)
