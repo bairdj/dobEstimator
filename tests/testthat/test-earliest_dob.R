@@ -1,5 +1,5 @@
 test_that("earliest_dob works", {
-  # Should return tomorrow's date age years ago
+  # Should return tomorrow's date age + 1 years ago
   expect_equal(earliest_dob(18, as.Date("2016-10-02")), as.Date("1997-10-03"))
   expect_equal(earliest_dob(27, as.Date("2000-09-16")), as.Date("1972-09-17"))
   expect_equal(earliest_dob(0, as.Date("2016-10-02")), as.Date("2015-10-03"))
@@ -20,4 +20,12 @@ test_that("earliest_dob throws errors for invalid input", {
   expect_snapshot(earliest_dob("asdfa", as.Date("2016-10-02")), error = TRUE)
   expect_error(earliest_dob(18, "asdfa"))
   expect_snapshot(earliest_dob(18, "asdfa"), error = TRUE)
+})
+
+test_that("earliest_dob handles leap days", {
+  expect_equal(earliest_dob(20, as.Date("2012-02-29")), as.Date("1991-03-01"))
+})
+
+test_that("earliest_dob handles leap days to non-leap year", {
+  expect_equal(earliest_dob(19, as.Date("2012-02-29")), as.Date("1992-03-01"))
 })

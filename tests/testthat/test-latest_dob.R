@@ -21,3 +21,11 @@ test_that("latest_dob throws errors for invalid input", {
   expect_error(latest_dob(18, "asdfa"))
   expect_snapshot(latest_dob(18, "asdfa"), error = TRUE)
 })
+
+test_that("latest_dob handles leap days to another leap year", {
+  expect_equal(latest_dob(20, as.Date("2012-02-29")), as.Date("1992-02-29"))
+})
+
+test_that("latest_dob handles leap days to non-leap year", {
+  expect_equal(latest_dob(17, as.Date("2012-02-29")), as.Date("1995-02-28"))
+})

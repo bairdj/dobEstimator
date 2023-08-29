@@ -12,5 +12,8 @@ latest_dob <- function(age, date) {
   check_age_arg(age)
   check_date_arg(date)
   if (any(age < 0)) stop("Age must be non-negative")
-  date - lubridate::years(age)
+  lubridate::add_with_rollback(
+    date,
+    lubridate::years(-age)
+  )
 }
